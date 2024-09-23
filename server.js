@@ -14,6 +14,7 @@ import filhosRoutes from './routes/filhosRoutes.js';
 import filosoficosRoutes from './routes/filosoficosRoutes.js';
 import casamentoRoutes from './routes/casamentoRoutes.js';
 import comemoracoesRoutes from './routes/comemoracoesRoutes.js';
+import simbolicosRoutes from './routes/simbolicosRoutes.js'; 
 
 
 dotenv.config();
@@ -52,6 +53,7 @@ app.use('/api/comemoracoes', comemoracoesRoutes);
 app.use('/api/comemoracoes-semana', comemoracoesRoutes);
 app.use('/api/comemoracoes-brasil', comemoracoesRoutes);
 app.use('/api/filosoficos', filosoficosRoutes);
+app.use('api/simbolicos', simbolicosRoutes);
 
 
 // Rota de teste
