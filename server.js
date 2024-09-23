@@ -15,14 +15,18 @@ import filosoficosRoutes from './routes/filosoficosRoutes.js';
 import casamentoRoutes from './routes/casamentoRoutes.js';
 import comemoracoesRoutes from './routes/comemoracoesRoutes.js';
 
-// Carregar variáveis de ambiente do arquivo .env
+
 dotenv.config();
 
-// Inicializar o aplicativo Express
 const app = express();
 
-// Middleware
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN,    
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
 
 // Rotas
