@@ -20,10 +20,18 @@ dotenv.config();
 
 const app = express();
 
-const corsOptions = {
+const allowedOrigins = {
   origin: process.env.CORS_ORIGIN,    
   optionsSuccessStatus: 200,
 };
+
+const corsOptions = {
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Permitir envio de cookies, se necessário.
+  optionsSuccessStatus: 204, // Para compatibilidade com alguns navegadores antigos.
+}; 
 
 app.use(cors(corsOptions));
 
